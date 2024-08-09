@@ -12,23 +12,23 @@ Clone the repository to your local machine using the following command:
 
 ```bash
 git clone https://github.com/Tai-MS/Portfolio.git
-2. Navigate to a Project Folder
+```
+### 2. Navigate to a Project Folder
 Move to the folder of the project you want to explore. For example:
 
-bash
-Copy code
+```bash
 cd "Full ECommerce API"
-3. Install Dependencies
+```
+### 3. Install Dependencies
 Once inside the project folder, install the necessary dependencies:
 
-bash
-Copy code
+```bash
 npm install
-4. Set Up Environment Variables
+```
+
+### 4. Set Up Environment Variables
 Create a .env file in the project root with the following fields:
 
-makefile
-Copy code
 PORT=
 MONGO_CONNECT= # MongoDB connection URL
 SECRET_KEY=
