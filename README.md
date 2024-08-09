@@ -29,10 +29,12 @@ npm install
 ### 4. Set Up Environment Variables
 Create a .env file in the project root with the following fields:
 
+```makefile
 PORT=
 MONGO_CONNECT= # MongoDB connection URL
 SECRET_KEY=
 ENVI=prod || dev # (Optional: Used by logger to determine if you're in a dev or production environment)
 USERMAILER= # Email address used for sending automated emails
 PASSMAILER= # Password for the email address
+```
 Each project folder contains a .env.example file that shows how to structure your .env file and provides more detailed instructions for each specific project.
