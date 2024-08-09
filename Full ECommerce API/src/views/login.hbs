@@ -1,0 +1,20 @@
+<form action="/user/login" method="POST" id="form">
+    <label for="email">Email</label>
+    <input type="text" name="email" id="email">
+
+    <label for="pass">Password</label>
+    <input type="password" name="password" id="pass">
+
+    <input type="submit" name="send" id="send">
+</form>
+
+<a href="reqchangepass">Forget your password?</a>
+<br>
+<a href="signup">Do not have an account? Sign Up!</a>
+<br>
+<a href="/user/auth/github">Or join us with GitHub</a>
+
+<h1>{{u}}</h1>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/user.js"></script>

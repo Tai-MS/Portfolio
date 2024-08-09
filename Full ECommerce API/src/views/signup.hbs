@@ -1,0 +1,26 @@
+<form action="/user/signup" method="POST" id="form">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email">
+
+    <label for="name">Name</label>
+    <input type="text" id="name" name="firstName">
+
+    <label for="lastname">Lastname</label>
+    <input type="text" id="lastName" name="lastName">
+
+    <label for="age">Age</label>
+    <input type="number" id="age" name="age">
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password">
+
+    <label for="confirmPassword">Confirm password</label>
+    <input type="password" id="confirmPassword" name="confirmPass">
+
+    <input type="submit" value="Signup" name="send">
+</form>
+
+<a href="/">Have an account? Login</a>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/user.js"></script>

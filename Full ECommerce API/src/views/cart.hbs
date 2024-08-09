@@ -1,0 +1,13 @@
+<h1>Cart:</h1>
+<div id="products-container"></div>
+<div id="total-container"></div>
+
+<form action="/ticket/" method="POST">
+    <button type="submit">Pay</button>
+</form>
+
+<script>
+    const user = {{{user}}}; 
+</script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/carts.js"></script>

@@ -1,0 +1,18 @@
+<form action="/user/documents" method="POST" enctype='multipart/form-data'>
+    <select name="file" id="fileType">
+        <option value="0">Profile picture</option>
+        <option value="1">Product image</option>
+        <option value="2">Document</option>
+    </select>
+    <input type="file" name="file" id="file">
+    <input type="submit" value="Send">
+</form>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/upload.js"></script>
+
+
+
+
+
+

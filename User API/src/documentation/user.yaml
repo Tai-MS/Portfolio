@@ -1,0 +1,185 @@
+openapi: 3.0.1
+info:
+  title: Products API
+  description: API que interactua con los productos
+  version: "1.0.0"
+paths:
+  /signup:
+    post:
+      tags:
+        - Users
+      summary: User Registration
+      description: Register a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+                confirmPass:
+                  type: string
+              required:
+                - firstName
+                - lastName
+                - email
+                - password
+                - confirmPass
+      responses:
+        201:
+          description: User created successfully
+        400:
+          description: Missing fields or password mismatch
+        409:
+          description: Email already in use
+
+  /login:
+    post:
+      tags:
+        - Users
+      summary: User Login
+      description: Log in a user and get a token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+                - email
+                - password
+      responses:
+        200:
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        400:
+          description: Missing fields
+        401:
+          description: Unauthorized
+
+  /getUser/{user}:
+    get:
+      tags:
+        - Users
+      summary: Get User Profile
+      description: Get the profile of a specific user
+      parameters:
+        - in: path
+          name: user
+          required: true
+          schema:
+            type: string
+          description: The username of the user
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            type: string
+          description: JWT token
+      responses:
+        200:
+          description: User profile retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  fullName:
+                    type: string
+                  email:
+                    type: string
+        401:
+          description: Unauthorized
+        404:
+          description: User not found
+
+  /updateUser:
+    put:
+      tags:
+        - Users
+      summary: Update User Profile
+      description: Update the profile of the logged-in user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+                email:
+                  type: string
+                emailOfOther:
+                  type: string
+              required:
+                - firstName
+                - lastName
+                - email
+      parameters:
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            type: string
+          description: JWT token
+      responses:
+        200:
+          description: User profile updated successfully
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+
+  /deleteUser:
+    delete:
+      tags:
+        - Users
+      summary: Delete User
+      description: Delete the logged-in user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+              required:
+                - email
+      parameters:
+        - in: header
+          name: Authorization
+          required: true
+          schema:
+            type: string
+          description: JWT token
+      responses:
+        200:
+          description: User deleted successfully
+        401:
+          description: Unauthorized
+        404:
+          description: User not found

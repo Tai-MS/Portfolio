@@ -1,0 +1,18 @@
+<form action="/user/changepass/{{token}}" method="POST" id="form">
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password">
+
+    <label for="passConfirm">Confirm password</label>
+    <input type="password" name="confirmPass" id="passConfirm">
+
+    <input type="submit" name="send" id="send">
+</form>
+<p>{{token}}</p>
+
+
+<h1>{{u}}</h1>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/user.js"></script>
+
+
